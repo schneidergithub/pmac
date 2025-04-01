@@ -1,0 +1,25 @@
+# Expanded AI capabilities for dental office
+roles:
+  - name: SmileBot AI Receptionist
+    default_type: ai
+    capabilities:
+      - schedule_appointments
+      - check_insurance_eligibility
+      - answer_faqs
+      - notify_office_staff
+      - handle_cancellations
+      - suggest_waitlist_fills
+      - send_reschedule_links
+    fallback_procedures:
+      - escalate_to_human_frontdesk_if_system_down
+      - notify_dentist_if_scheduling_unavailable
+
+  - name: Billing Assistant AI
+    default_type: ai
+    capabilities:
+      - generate_invoices
+      - validate_insurance_codes
+      - email_billing_summaries
+      - detect_reimbursement_errors
+    fallback_procedures:
+      - delay_and_log_if_insurance_gateway_offline

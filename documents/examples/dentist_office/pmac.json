@@ -1,0 +1,66 @@
+{
+  "project": "Smith Family Dental - New Practice Launch",
+  "spec_version": "1.0.0",
+  "timezone_strategy": "local-business-hours",
+  "escalation": {
+    "backup_manager": "office_manager",
+    "alerts": [
+      "email"
+    ],
+    "sla_policy": "daily-checks"
+  },
+  "epics": [
+    {
+      "name": "Initial Setup",
+      "stories": [
+        {
+          "summary": "Register the business with the state",
+          "description": "Complete LLC registration for the dental practice.",
+          "issue_type": "Story",
+          "labels": [
+            "legal",
+            "compliance"
+          ]
+        },
+        {
+          "summary": "Set up patient scheduling system",
+          "description": "Choose and implement software for scheduling appointments.",
+          "issue_type": "Story",
+          "labels": [
+            "software",
+            "admin"
+          ]
+        },
+        {
+          "summary": "Hire front desk assistant",
+          "description": "Determine if a human or AI chatbot is best suited to handle bookings, insurance checks, and basic questions.",
+          "issue_type": "Decision",
+          "labels": [
+            "staffing",
+            "ai",
+            "ops"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketing & Growth",
+      "stories": [
+        {
+          "summary": "Launch initial website and booking portal",
+          "description": "Website with hours, contact, booking form linked to AI scheduling assistant.",
+          "issue_type": "Story",
+          "labels": [
+            "marketing",
+            "ai"
+          ]
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    "dental-practice-llc-approval.pdf",
+    "ai-assistant-config.yaml",
+    "website-deployment-guide.md"
+  ]
+}

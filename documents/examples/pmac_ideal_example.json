@@ -1,0 +1,341 @@
+{
+  "project": {
+    "name": "PMAC Open Source SaaS Launch",
+    "id": "pmac-saas-001",
+    "description": "Launch PMAC as an open-source SaaS product to automate hybrid project execution with human-AI collaboration.",
+    "start_date": "2025-04-01",
+    "status": "planning",
+    "version": "1.0.0",
+    "repo_url": "https://github.com/schneidergithub/pmac",
+    "tags": [
+      "open-source",
+      "automation",
+      "ai",
+      "project-management"
+    ],
+    "objectives": [
+      "Demonstrate PMAC MVP",
+      "Model hybrid team collaboration",
+      "Enable self-healing execution"
+    ],
+    "compliance": [
+      "MIT",
+      "CC BY 4.0"
+    ]
+  },
+  "team": {
+    "timezone": "Follow-the-Sun",
+    "members": [
+      {
+        "id": "human-aaron",
+        "name": "Aaron Schneider",
+        "role": "Founder & Product Architect",
+        "location": "US/Eastern",
+        "availability": "full-time",
+        "skills": [
+          "AI Integration",
+          "Agile",
+          "DevOps",
+          "Project Manager",
+          "Scrum Master",
+          "Technical Writing",
+          "Programmer",
+          "Communication",
+          "Strategy"
+        ],
+        "working_hours": "9am-5pm",
+        "trust_level": "high",
+        "slas": {
+          "response": "4h",
+          "escalation": "12h"
+        }
+      },
+      {
+        "id": "human-jen",
+        "name": "Jen Smith",
+        "role": "Technical Writer & Servant Leader",
+        "location": "US/Pacific",
+        "availability": "part-time",
+        "skills": [
+          "Confluence",
+          "Documentation",
+          "Scrum Master",
+          "agile",
+          "PMP"
+        ],
+        "working_hours": "10am-2pm",
+        "trust_level": "medium",
+        "slas": {
+          "response": "8h",
+          "escalation": "24h"
+        }
+      },
+      {
+        "id": "ai-gpt4-pmac",
+        "name": "PMAC Assistant (GPT-4)",
+        "role": "AI Product Advisor",
+        "provider": "OpenAI",
+        "model": "gpt-4",
+        "tasks": [
+          "Enhance stories",
+          "Draft documentation",
+          "Generate org charts",
+          "Suggest automation"
+        ],
+        "capabilities": [
+          "gherkin-refinement",
+          "gpt-prompting",
+          "json-schema",
+          "markdown",
+          "technical-writing"
+        ],
+        "availability": "24/7",
+        "fallback_on_failure": true,
+        "trust_level": "high",
+        "slas": {
+          "response": "instant",
+          "escalation": "human-aaron"
+        }
+      },
+      {
+        "id": "ai-agent-planner",
+        "name": "AutoPlanner v1",
+        "role": "Sprint Planner",
+        "provider": "PMAC AI",
+        "model": "custom",
+        "tasks": [
+          "Balance sprint load",
+          "Generate burndown forecast",
+          "Assign fallback roles"
+        ],
+        "capabilities": [
+          "calendar-logic",
+          "team-balancing",
+          "json-analysis"
+        ],
+        "availability": "daily-run",
+        "fallback_on_failure": true,
+        "trust_level": "medium",
+        "slas": {
+          "response": "30m",
+          "escalation": "human-jen"
+        }
+      }
+    ]
+  },
+  "org_chart": {
+    "type": "matrix",
+    "departments": [
+      "Product",
+      "Engineering",
+      "Community",
+      "AI Ops"
+    ],
+    "org_units": {
+      "Product": [
+        "human-aaron"
+      ],
+      "Engineering": [
+        "ai-agent-planner"
+      ],
+      "Community": [
+        "human-jen"
+      ],
+      "AI Ops": [
+        "ai-gpt4-pmac"
+      ]
+    },
+    "reporting": [
+      {
+        "manager": "human-aaron",
+        "reports": [
+          "ai-gpt4-pmac",
+          "ai-agent-planner"
+        ]
+      },
+      {
+        "manager": "human-jen",
+        "reports": []
+      }
+    ]
+  },
+  "sprints": [
+    {
+      "name": "Sprint 1: Bootstrap MVP",
+      "duration_days": 14,
+      "start": "2025-04-01",
+      "stories": [
+        {
+          "id": "story-001",
+          "summary": "Define PMAC JSON Schema",
+          "gherkin_feature": "features/schema_definition.feature",
+          "assigned_to": "human-aaron",
+          "labels": [
+            "foundational",
+            "json",
+            "v1"
+          ],
+          "test_reference": "tests/test_schema_validation.py",
+          "priority": "high",
+          "risk": "low",
+          "data_classification": "Public"
+        },
+        {
+          "id": "story-002",
+          "summary": "Generate first hybrid org chart with AI + humans",
+          "gherkin_feature": "features/org_chart_generation.feature",
+          "assigned_to": "ai-gpt4-pmac",
+          "labels": [
+            "ai",
+            "org",
+            "demo"
+          ],
+          "test_reference": "tests/test_org_chart_output.py",
+          "priority": "medium",
+          "risk": "medium",
+          "data_classification": "Public"
+        }
+      ]
+    }
+  ],
+  "slas": {
+    "default_response_time": "4h",
+    "default_escalation_time": "12h"
+  },
+  "automation": {
+    "bootstrap_engine": "pmac_bootstrap.py",
+    "ai_enhancer": "pmac_ai_jira_enhancer.json",
+    "state_tracker": "pmac_state_tracker.json",
+    "test_suite": "test_all.py",
+    "webhook_triggers": [
+      "onFailure",
+      "onNewSprint",
+      "onDeploy"
+    ]
+  },
+  "environments": {
+    "dev": {
+      "url": "https://dev.aaronschneider.biz",
+      "git_branch": "dev"
+    },
+    "prod": {
+      "url": "https://www.aaronschneider.biz",
+      "git_branch": "main"
+    }
+  },
+  "collaboration": {
+    "chat_url": "https://slack.com/team/aaronschneiderbiz",
+    "ai_feedback_hook": "https://api.openai.com/feedback"
+  },
+  "contributors": [
+    {
+      "name": "Aaron Schneider",
+      "role": "Maintainer",
+      "email": "aaron@example.com"
+    },
+    {
+      "name": "Jen Smith",
+      "role": "Technical Writer",
+      "email": "jen@example.com"
+    }
+  ],
+  "ideal_team": {
+    "roles": [
+      {
+        "id": "product-lead",
+        "title": "Product Lead",
+        "description": "Owns product strategy and execution oversight.",
+        "required_skills": [
+          "strategy",
+          "communication",
+          "DevOps"
+        ],
+        "availability": "full-time",
+        "can_be_ai": false
+      },
+      {
+        "id": "servant-leader",
+        "title": "Servant Leader",
+        "description": "Facilitates sprints, clears blockers, and ensures team alignment.",
+        "required_skills": [
+          "agile",
+          "scrum",
+          "facilitation"
+        ],
+        "availability": "part-time",
+        "can_be_ai": true
+      },
+      {
+        "id": "doc-bot",
+        "title": "Documentation Assistant",
+        "description": "Generates and maintains living documentation.",
+        "required_skills": [
+          "markdown",
+          "technical-writing"
+        ],
+        "availability": "as-needed",
+        "can_be_ai": true
+      },
+      {
+        "id": "planner",
+        "title": "Sprint Planner",
+        "description": "Analyzes workload and adjusts capacity planning.",
+        "required_skills": [
+          "calendar-logic",
+          "json-analysis"
+        ],
+        "availability": "daily-run",
+        "can_be_ai": true
+      }
+    ],
+    "mapping": {
+      "human-aaron": "product-lead",
+      "human-jen": "servant-leader",
+      "ai-gpt4-pmac": "doc-bot",
+      "ai-agent-planner": "planner"
+    }
+  },
+  "validation_rules": {
+    "require_story_tests": true,
+    "validate_skill_mapping": true,
+    "limit_sprint_length_days": 21,
+    "require_unique_ids": true
+  },
+  "iam_declarations": {
+    "roles": {
+      "contributor": [
+        "read",
+        "write"
+      ],
+      "admin": [
+        "read",
+        "write",
+        "approve"
+      ],
+      "viewer": [
+        "read"
+      ]
+    },
+    "assignments": {
+      "human-aaron": "admin",
+      "human-jen": "contributor",
+      "ai-gpt4-pmac": "viewer"
+    }
+  },
+  "strategic_goals": [
+    {
+      "id": "goal-1",
+      "description": "Launch open-source PMAC MVP",
+      "linked_stories": [
+        "story-001",
+        "story-002"
+      ]
+    }
+  ],
+  "artifacts": {
+    "gherkin_dir": "features/",
+    "test_dir": "tests/",
+    "docs_dir": "docs/",
+    "env_dir": "envs/"
+  }
+}

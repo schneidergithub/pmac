@@ -1,0 +1,32 @@
+name: dental_team
+timezone: America/New_York
+members:
+  - id: dr_smith
+    name: Dr. Emily Smith
+    role: Dentist
+    type: human
+    working_hours: ["08:00", "17:00"]
+  - id: frontdesk_ai
+    name: SmileBot AI Receptionist
+    role: Receptionist
+    type: ai
+    capabilities:
+      - schedule_appointments
+      - check_insurance_eligibility
+      - answer_faqs
+      - notify_office_staff
+    sla: immediate
+  - id: dental_hygienist
+    name: Sam Lee
+    role: Dental Hygienist
+    type: human
+    working_hours: ["08:00", "16:00"]
+  - id: billing_bot
+    name: Billing Assistant AI
+    role: Billing Support
+    type: ai
+    capabilities:
+      - generate_invoices
+      - validate_insurance_codes
+      - email_billing_summaries
+    sla: same-day

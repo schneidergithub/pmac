@@ -1,0 +1,21 @@
+{
+  "morning_huddle": {
+    "frequency": "daily",
+    "time": "07:45",
+    "timezone": "America/New_York",
+    "participants": [
+      "dental_team"
+    ],
+    "owner": "dr_smith"
+  },
+  "monthly_billing_review": {
+    "frequency": "monthly",
+    "time": "17:30",
+    "timezone": "America/New_York",
+    "participants": [
+      "dental_team"
+    ],
+    "facilitator": "billing_bot",
+    "notes_export": "email"
+  }
+}
