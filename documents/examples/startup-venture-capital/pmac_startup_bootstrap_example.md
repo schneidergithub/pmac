@@ -3,7 +3,7 @@
 
 ## 🧪 Scenario: From Seed Round to Software Company
 
-**Startup:** HexaFlow AI Inc.  
+**Startup:** PMAC AI Inc.  
 **Funding:** $2M seed round  
 **Team:** 2 founders, 1 contractor, and 3 engineers starting next week  
 **Goal:** Launch MVP in 90 days and prepare for a Series A pitch  
@@ -18,7 +18,7 @@ Using **Project Management as Code (PMAC)**, the founders define everything in v
 ### 📁 `pmac_startup_bootstrap.json`
 ```json
 {
-  "company_name": "HexaFlow AI Inc.",
+  "company_name": "PMAC AI Inc.",
   "project_name": "MVP Buildout",
   "departments": ["engineering", "design", "product", "bizops"],
   "tools": ["Slack", "GitHub", "Jira", "Confluence", "Google Workspace"],
@@ -59,7 +59,7 @@ Using **Project Management as Code (PMAC)**, the founders define everything in v
 - Add onboarding workflow for all new members
 
 ### 🔧 GitHub
-- Create org `hexaflow`
+- Create org `pmac`
 - Initialize `mvp-backend` and `mvp-frontend` repos with README + CI templates
 - Configure protected branches + auto-link PRs to Jira
 
@@ -113,8 +113,8 @@ After running `pmac_bootstrap.py` with this config:
 ---
 
 ## 💡 Benefits for Startups
-- Save **30–50 hours** of manual setup time
-- Ensure **structure without slowing speed**
+- Save **days to weeks** of manual setup time
+- Ensure **structure without slowing speed** and best practices
 - Create **audit trail** from day 1
 - Prevent drift and team confusion
 - Enable seamless **AI + human hybrid work** from the start
@@ -124,4 +124,4 @@ After running `pmac_bootstrap.py` with this config:
 **PMAC turns your funded idea into an operating machine in 24 hours.**
 
 **GitHub Repo:** https://github.com/schneidergithub/pmac  
-**Contact:** Aaron Schneider | contact@aaronschneider.org
+**Contact:** Aaron Schneider 
