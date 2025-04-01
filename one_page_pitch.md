@@ -4,6 +4,10 @@
 **What is PMAC?**
 PMAC (Project Management as Code) is a revolutionary approach to managing software projects. It treats project plans, team roles, Jira tickets, sprint structures, documentation, and even meeting cadences as version-controlled code. By codifying every aspect of project management, PMAC introduces reproducibility, testability, automation, and hybrid human-AI collaboration into the project lifecycle.
 
+PMAC treats project management artifacts—like team roles, sprints, documentation, Jira tickets, and even meeting structures as declarative code, version-controlled in Git, validated through automated tests, and integrated into your DevOps pipeline.
+
+Combines ideas like GitOps, Agile, DevSecOps, and Docs-as-Code with Test Driven Development and future-thinking AI / human hybrid teams.
+
 **Why PMAC?**
 - **Reproducibility:** Clone, spin up, and relaunch entire projects like infrastructure code.
 - **Automation-Ready:** Generate Jira boards, GitHub repos, Confluence docs, and Slack channels from a single JSON file.
