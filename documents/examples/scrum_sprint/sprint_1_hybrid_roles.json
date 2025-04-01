@@ -1,0 +1,83 @@
+{
+    "sprint_name": "Sprint 1 - Foundation Setup",
+    "epics": [
+        {
+            "epic_name": "Organizational and System Bootstrap",
+            "user_stories": [
+                {
+                    "summary": "Define team structure and rotating roles in JSON",
+                    "description": "Model the full team roles including Product Owner, DevOps, QA, etc., and setup a rotation schedule.",
+                    "responsible_role": "Scrum Master",
+                    "collaborators": [
+                        "Tech Lead",
+                        "Product Owner"
+                    ],
+                    "owner_level": "Senior",
+                    "acceptance_criteria": [
+                        "Org chart includes all defined roles with rotation setup",
+                        "Mentorship links for junior roles are specified"
+                    ],
+                    "automated_tests": [
+                        "test_team_structure.py",
+                        "test_rotation_schedule.py"
+                    ],
+                    "status": "Planned",
+                    "executor_type": "Human",
+                    "can_be_replaced_by": [
+                        "AI"
+                    ],
+                    "role_flexibility_notes": "Role includes decision-making. AI suggestions allowed, human approval required."
+                },
+                {
+                    "summary": "Initialize Jira and Confluence integration",
+                    "description": "Create linked Jira board and Confluence space with predefined templates for sprints and documentation.",
+                    "responsible_role": "Documentation/Knowledge Manager",
+                    "collaborators": [
+                        "Project Administrator",
+                        "Product Owner"
+                    ],
+                    "owner_level": "Mid",
+                    "acceptance_criteria": [
+                        "Jira and Confluence projects are accessible and linked",
+                        "Default templates and workflows are installed"
+                    ],
+                    "automated_tests": [
+                        "test_jira_confluence_links.py"
+                    ],
+                    "status": "Planned",
+                    "executor_type": "Human",
+                    "can_be_replaced_by": [
+                        "AI"
+                    ],
+                    "role_flexibility_notes": "Role includes decision-making. AI suggestions allowed, human approval required."
+                },
+                {
+                    "summary": "Deploy CI/CD infrastructure and create bucky_state.json",
+                    "description": "Set up foundational infrastructure with CI/CD and state tracking.",
+                    "responsible_role": "DevOps Engineer",
+                    "collaborators": [
+                        "Backend Developer",
+                        "Tech Lead"
+                    ],
+                    "owner_level": "Senior",
+                    "acceptance_criteria": [
+                        "CI/CD pipeline auto-deploys state file",
+                        "State file reflects accurate simulation values"
+                    ],
+                    "automated_tests": [
+                        "test_pipeline_integrity.py",
+                        "test_state_file.py"
+                    ],
+                    "status": "Planned",
+                    "executor_type": "Hybrid",
+                    "can_be_replaced_by": [
+                        "Human",
+                        "AI"
+                    ],
+                    "role_flexibility_notes": "Automation-friendly task. AI can execute with oversight or support."
+                }
+            ]
+        }
+    ],
+    "velocity_points": 13
+}
