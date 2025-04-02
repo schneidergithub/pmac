@@ -1,0 +1,19 @@
+{
+  "roles": {
+    "manager": "Oversees sprint/project execution, decision-making, accountability.",
+    "planner": "Maps strategic goals to tasks, handles stakeholder communication.",
+    "servant_leader": "Removes blockers, supports the team, facilitates rituals.",
+    "builder": "Executes development or deliverables with minimal distraction.",
+    "support": "Handles unplanned work, escalations, incidents.",
+    "refiner": "Breaks down stories, improves documentation, clarifies acceptance.",
+    "ai_bot": "Performs automation tasks, story refinement, validation.",
+    "human_shadow": "Junior teammate paired for learning/backup.",
+    "compute_agent": "Traditional software agent or service responsible for processing tasks.",
+    "ai_advisor": "Provides AI-powered suggestions or insights without direct task ownership.",
+    "iam_policy_engine": "Manages permissions, generates access policies, ensures compliance.",
+    "audit_agent": "Captures evidence and logs for traceability, feeds into compliance systems.",
+    "validator": "Validates work via tests (automated/manual), supports ATDD.",
+    "package_deployer": "Handles software packaging and deployment tasks.",
+    "stakeholder_proxy": "Represents external approvers or reviewers without ownership."
+  }
+}
