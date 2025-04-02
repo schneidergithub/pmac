@@ -1,0 +1,73 @@
+{
+  "context_id": "pmac-access-review-q1-2025",
+  "name": "Access Control Review Q1 2025",
+  "description": "Quarterly compliance project to review and certify user access permissions.",
+  "goals": [
+    "Ensure all user access is reviewed and approved.",
+    "Generate audit-ready reports for compliance team.",
+    "Automate repeatable tasks for future reviews."
+  ],
+  "roles": [
+    {
+      "name": "manager",
+      "actor": "Alice"
+    },
+    {
+      "name": "compute_agent",
+      "actor": "etl_job_runner"
+    },
+    {
+      "name": "ai_bot",
+      "actor": "pmac_validator_ai"
+    },
+    {
+      "name": "auditor",
+      "actor": "Claire"
+    }
+  ],
+  "documents": [
+    {
+      "name": "PolicyTech Access Policy",
+      "url": "https://policytech.company.com/access-control-policy.pdf"
+    },
+    {
+      "name": "Gherkin Test Suite",
+      "path": "./tests/access_control.feature"
+    },
+    {
+      "name": "README",
+      "path": "./README.md"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-001",
+      "summary": "Export IAM roles",
+      "assigned_to": "compute_agent"
+    },
+    {
+      "id": "task-002",
+      "summary": "Run AI validation",
+      "assigned_to": "ai_bot"
+    },
+    {
+      "id": "task-003",
+      "summary": "Final human approval",
+      "assigned_to": "auditor"
+    }
+  ],
+  "state": {
+    "task_status": "in_progress",
+    "ai_feedback": "All access validated except 3 users with anomalies",
+    "next_action": "Alert auditor for review"
+  },
+  "metadata": {
+    "created_by": "pmac_bootstrapper",
+    "version": "0.2.1",
+    "tags": [
+      "compliance",
+      "automated-review",
+      "audit"
+    ]
+  }
+}
