@@ -18,10 +18,11 @@ Version-controlled project management structures enhances GitOps, DevSecOps, and
 - **Single Source of Truth:** Git becomes the unified logbook of all project activities and state.
 
 **Key Benefits**
-- Reduce onboarding time
+- AI incorporated into project teams as coworkers with escalation policies
+- Reduce time kick starting a project & onboarding
 - Detect and fix project drift automatically
 - Standardize projects across teams and orgs
-- Generate documentation and action items on demand
+- Generate documentation, enhance jira stories, and create action items on demand
 - Eliminate context switching between Jira, Confluence, GitHub, and Slack
 
 **How It Works**

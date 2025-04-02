@@ -43,22 +43,6 @@ PMAC projects can automatically:
 
 ---
 
-## Architecture Overview
-
-```
-PMAC Repository
-├── pmac.json                # Project definition
-├── team/                    # Human and AI roles
-├── sprints/                 # Sprint folders with user stories and tests
-├── environments/            # Dev, staging, prod configurations
-├── state/                   # Desired vs. observed infrastructure
-├── tests/                   # Validation and drift detection
-├── automation/              # CI/CD scripts and GitHub Actions
-└── docs/                    # Auto-generated Confluence-style markdown
-```
-
----
-
 ## Use Case: GitOps + PMAC
 A GitOps project may define Kubernetes deployment YAMLs and Terraform infrastructure as code. PMAC adds:
 - Team ownership and escalation policies
@@ -86,9 +70,9 @@ AI is embedded into daily workflows without replacing human accountability.
 
 ## Future Directions
 - Web-based PMAC editors and validators
-- Integration with OpenAI, Jira, Confluence, MS Teams
+- Integration with Github, OpenAI, Jira & Confluence, MS Teams / Slack
 - Public PMAC project registry for cloning best-practice templates
-- AI agents trained on PMAC schema to suggest task improvements
+- AI agents trained specifically for PMAC
 
 ---
 
