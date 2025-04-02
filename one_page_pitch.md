@@ -1,12 +1,14 @@
 
 **Project Management as Code (PMAC) Pitch**
 
+"How much energy do you wanna spend on that?"
+
 **What is PMAC?**
-PMAC (Project Management as Code) is a revolutionary approach to managing software projects. It treats project plans, team roles, Jira tickets, sprint structures, documentation, and even meeting cadences as version-controlled code. By codifying every aspect of project management, PMAC introduces reproducibility, testability, automation, and hybrid human-AI collaboration into the project lifecycle.
+PMAC (Project Management as Code) is a revolutionary approach to managing projects. It treats project plans, team roles, Jira tickets, sprint structures, documentation, and even meeting cadences as version-controlled code. By codifying every aspect of project management, PMAC introduces reproducibility, testability, automation, and hybrid human-AI collaboration into the project lifecycle.
 
-PMAC treats project management artifacts—like team roles, sprints, documentation, Jira tickets, and even meeting structures as declarative code, version-controlled in Git, validated through automated tests, and integrated into your DevOps pipeline.
+PMAC treats project management artifacts—like team roles, sprints, documentation, Jira tickets, and even meeting structures as declarative code, version-controlled in Git, validated through automated tests, and integrated into your pipelines.
 
-Combines ideas like GitOps, Agile, DevSecOps, and Docs-as-Code with Test Driven Development and future-thinking AI / human hybrid teams.
+Version-controlled project management structures enhances GitOps, DevSecOps, and yadayada-as-Code with Test Driven Development and future-thinking AI / human hybrid teams.
 
 **Why PMAC?**
 - **Reproducibility:** Clone, spin up, and relaunch entire projects like infrastructure code.
@@ -32,18 +34,18 @@ Combines ideas like GitOps, Agile, DevSecOps, and Docs-as-Code with Test Driven 
    - Confluence or Markdown documentation
    - Slack or Teams channels
 4. Test the current state against the expected configuration
-5. Log changes, AI suggested tasks, and assign responsibilities automatically
+5. Log changes, AI suggested tasks & triage, and assign responsibilities automatically
 
 **Integrations**
-- **Jira / Confluence / Slack / GitHub / GitLab / Microsoft Teams / AWS IAM / Terraform / OpenAI / Notion**
+- **Jira / Confluence / Slack / GitHub / GitLab / Microsoft Teams / AWS IAM / Terraform / OpenAI / Notion / MDC / policytech**
 
 **Who's It For?**
-- Engineering teams with complex multi-team projects
-- DevOps & Platform teams automating CI/CD and org structure
-- Startups standardizing repeatable project templates
+- Engineering teams with complex multi-team projects. Ideal for hybrid global teams dealing with timezone complexities and incorporating "AI Agents". Escalation policies, auto-scaling, failback procedures, hand-offs between traditional software <-> AI agents <-> People <->(timezones, PTO). 
+- DevOps & Platform teams automating CI/CD and standardizing org structure
+- Startups standardizing repeatable project templates with ideal setups
 - Enterprises needing audit trails and security enforcement
 
-**PMAC is GitOps for People.**
+**PMAC is GitOps for Processes,People,AI.**
 Bring software principles to the way you manage projects.
 
 **GitHub Repo:** https://github.com/schneidergithub/pmac
