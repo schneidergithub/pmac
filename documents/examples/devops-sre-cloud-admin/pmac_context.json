@@ -1,0 +1,93 @@
+{
+  "context_id": "pmac-rcp-update-q2-2025",
+  "name": "Remote Configuration Platform Update",
+  "description": "Automated config update across 300 endpoints with AI and human escalation handling.",
+  "goals": [
+    "Ensure configuration updates are applied across all endpoints.",
+    "Handle failures using AI remediation and human escalation.",
+    "Generate post-incident improvements automatically."
+  ],
+  "roles": [
+    {
+      "name": "compute_agent",
+      "actor": "rcp_updater"
+    },
+    {
+      "name": "ai_bot",
+      "actor": "ai_config_remediator"
+    },
+    {
+      "name": "support_engineer",
+      "actor": "Human"
+    },
+    {
+      "name": "audit_agent",
+      "actor": "audit_logger"
+    },
+    {
+      "name": "validator",
+      "actor": "ai_validator_bot"
+    }
+  ],
+  "documents": [
+    {
+      "name": "RCP Update Policy",
+      "url": "https://policytech.company.com/rcp-update-policy.pdf"
+    },
+    {
+      "name": "Gherkin Test Suite",
+      "path": "./tests/rcp_update.feature"
+    },
+    {
+      "name": "README",
+      "path": "./README.md"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-001",
+      "summary": "Execute RCP update job",
+      "assigned_to": "rcp_updater"
+    },
+    {
+      "id": "task-002",
+      "summary": "Retry update via AI bot",
+      "assigned_to": "ai_config_remediator"
+    },
+    {
+      "id": "task-003",
+      "summary": "Human investigates IAM failure",
+      "assigned_to": "Human"
+    },
+    {
+      "id": "task-004",
+      "summary": "Retry AI fix after policy correction",
+      "assigned_to": "ai_config_remediator"
+    },
+    {
+      "id": "task-005",
+      "summary": "Log post-incident report",
+      "assigned_to": "audit_logger"
+    },
+    {
+      "id": "task-006",
+      "summary": "Validate IAM policy automation",
+      "assigned_to": "ai_validator_bot"
+    }
+  ],
+  "state": {
+    "task_status": "in_progress",
+    "ai_feedback": "Initial retry failed, policy blocked token access",
+    "next_action": "Human IAM fix, then re-invoke AI"
+  },
+  "metadata": {
+    "created_by": "pmac_bootstrapper",
+    "version": "0.3.0",
+    "tags": [
+      "rcp",
+      "automation",
+      "incident-response",
+      "ai-human-handoff"
+    ]
+  }
+}
