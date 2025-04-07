@@ -1,0 +1,279 @@
+{
+    "project": "GitFlow Security Automation",
+    "description": "A robust bash script to automate the creation and configuration of GitHub repositories with GitFlow branching model and comprehensive security best practices, with special attention to GitHub UI integration",
+    "epics": [
+      {
+        "id": "EPIC-1",
+        "title": "Repository Creation and Configuration",
+        "description": "Setup and initialization of GitHub repositories with proper structure and essential files",
+        "userStories": [
+          {
+            "id": "US-1.1",
+            "title": "Create new GitHub repository",
+            "description": "As a developer, I want to quickly create a new GitHub repository so that I can start working on a new project",
+            "acceptanceCriteria": [
+              "Script successfully creates both public and private repositories using GitHub CLI",
+              "Repository is created with a properly formatted README.md file that includes project name and description",
+              "Repository is cloned to the local machine with proper error handling",
+              "User can specify repository name and description through command line arguments",
+              "Script verifies repository creation before proceeding to next steps",
+              "Optional commit verification and signing is configured if GPG keys are available"
+            ],
+            "priority": "High",
+            "effort": "2",
+            "implementation": "Use `gh repo create` with proper visibility flags, error handling, and verification steps"
+          },
+          {
+            "id": "US-1.2",
+            "title": "Add collaborators and teams",
+            "description": "As a developer, I want to add team members to my repository so that we can collaborate effectively",
+            "acceptanceCriteria": [
+              "Individual collaborators can be added through comma-separated command line arguments",
+              "Teams can be added through comma-separated command line arguments",
+              "Proper permissions (push level) are set for collaborators and teams",
+              "Script handles errors gracefully when collaborators or teams cannot be added",
+              "Script reports success or failure for each collaborator/team addition attempt"
+            ],
+            "priority": "Medium",
+            "effort": "1",
+            "implementation": "Use `gh repo add-collaborator` and `gh api` commands with proper error handling"
+          },
+          {
+            "id": "US-1.3",
+            "title": "Create LICENSE and baseline documentation",
+            "description": "As a developer, I want the repository to include proper licensing and basic documentation to establish project governance",
+            "acceptanceCriteria": [
+              "MIT License file is created with current year and proper formatting",
+              "README.md includes sections for project overview, getting started, and usage",
+              "All created files are properly committed and pushed to the repository",
+              "Files are correctly formatted with proper markdown syntax"
+            ],
+            "priority": "Medium",
+            "effort": "1",
+            "implementation": "Generate license file with current year from system date and create comprehensive README with clear sections"
+          }
+        ]
+      },
+      {
+        "id": "EPIC-2",
+        "title": "GitFlow Branch Structure",
+        "description": "Implementation of GitFlow branching model in repositories with verification of branch creation",
+        "userStories": [
+          {
+            "id": "US-2.1",
+            "title": "Initialize GitFlow branch structure",
+            "description": "As a developer, I want to set up a GitFlow branch structure so that I can follow best practices for feature development and releases",
+            "acceptanceCriteria": [
+              "Creates and verifies main branch as the primary branch with initial content",
+              "Creates and verifies develop branch from main with appropriate content",
+              "Creates example feature, release, and hotfix branches with appropriate content",
+              "Pushes all branches to the remote repository with proper upstream tracking",
+              "Handles cases where repository may be empty or have no initial commit",
+              "Works with or without git-flow installed, using native git commands as fallback",
+              "Provides explicit verification steps to ensure all branches exist remotely",
+              "Returns to develop branch at the end of the process"
+            ],
+            "priority": "High",
+            "effort": "3",
+            "implementation": "Use conditional checks for git-flow availability, explicit branch creation with content files, and verification function to confirm all branches exist remotely"
+          },
+          {
+            "id": "US-2.2",
+            "title": "Set up branch protection rules",
+            "description": "As a developer, I want to protect important branches so that code quality and review processes are enforced",
+            "acceptanceCriteria": [
+              "Protects main and develop branches from direct pushes",
+              "Requires at least one pull request review before merging",
+              "Configures status checks requirement if CI is enabled",
+              "Works with both free and paid GitHub accounts, with clear feedback about limitations",
+              "Provides appropriate warning messages when protection rules cannot be applied",
+              "Verifies protection rules are applied and reports status",
+              "Handles API request errors gracefully with informative messages"
+            ],
+            "priority": "High",
+            "effort": "2",
+            "implementation": "Use GitHub API via `gh api` commands to configure branch protection with appropriate error handling and fallbacks for free accounts"
+          }
+        ]
+      },
+      {
+        "id": "EPIC-3",
+        "title": "Security Configuration",
+        "description": "Setup of security documentation and tools with GitHub Security tab integration",
+        "userStories": [
+          {
+            "id": "US-3.1",
+            "title": "Add security documentation",
+            "description": "As a developer, I want to add security documentation so that contributors know how to report vulnerabilities and that appears in GitHub's Security tab",
+            "acceptanceCriteria": [
+              "Adds SECURITY.md in the standardized format recognized by GitHub Security tab",
+              "Includes supported versions section with example data in SECURITY.md",
+              "Adds detailed vulnerability reporting instructions in SECURITY.md",
+              "Creates .github/CODEOWNERS file with appropriate ownership assignments",
+              "Creates security issue templates as .yml files in the GitHub Forms format",
+              "Creates a config.yml file to disable blank issues and direct to security policy",
+              "All security files are properly committed and pushed",
+              "Security tab in GitHub UI shows the security policy"
+            ],
+            "priority": "High",
+            "effort": "1",
+            "implementation": "Create security documentation files in GitHub-recognized formats and locations, using the GitHub Forms format for issue templates"
+          },
+          {
+            "id": "US-3.2",
+            "title": "Set up security scanning",
+            "description": "As a developer, I want to set up automated security scanning that integrates with GitHub's Security tab so that vulnerabilities are detected early and visible in the UI",
+            "acceptanceCriteria": [
+              "Sets up GitHub Actions workflow for security scanning in .github/workflows",
+              "Configures Trivy for dependency scanning with SARIF output format",
+              "Configures CodeQL for code scanning with proper language detection",
+              "Adds GitLeaks for secret scanning",
+              "Sets up Dependency Review for pull requests",
+              "Configures weekly scheduled scans",
+              "Ensures output is sent to GitHub Security tab using upload-sarif action",
+              "Creates .github/codeql/codeql-config.yml for advanced CodeQL configuration",
+              "All security scanning configuration is properly committed and pushed"
+            ],
+            "priority": "Medium",
+            "effort": "2",
+            "implementation": "Create workflow files that use GitHub security scanning actions with SARIF output format to ensure visibility in Security tab"
+          },
+          {
+            "id": "US-3.3",
+            "title": "Enable Security Advisories and alerts",
+            "description": "As a developer, I want to enable GitHub Security Advisories so that security vulnerabilities can be managed and tracked",
+            "acceptanceCriteria": [
+              "Creates workflow file that enables GitHub Security Advisories integration",
+              "Configures Dependabot alerts via .github/dependabot.yml",
+              "Sets up security scanning with proper repository permissions",
+              "All configurations appear in GitHub Security tab",
+              "Security alerts are enabled for the repository",
+              "All security advisory configurations are properly committed and pushed"
+            ],
+            "priority": "High",
+            "effort": "1",
+            "implementation": "Configure Security Advisories using GitHub's integrations with proper permissions and configurations"
+          }
+        ]
+      },
+      {
+        "id": "EPIC-4",
+        "title": "CI/CD and Automation",
+        "description": "Setup of continuous integration and delivery workflows",
+        "userStories": [
+          {
+            "id": "US-4.1",
+            "title": "Set up CI workflow",
+            "description": "As a developer, I want to set up continuous integration so that code is automatically built and tested",
+            "acceptanceCriteria": [
+              "Creates GitHub Actions workflow for CI in .github/workflows/ci.yml",
+              "Configures workflow to run on pushes to main and develop branches",
+              "Configures workflow to run on pull requests to main and develop branches",
+              "Includes sample build, test, and linting steps that can be customized later",
+              "Configuration is properly committed and pushed",
+              "CI workflow appears in GitHub Actions tab"
+            ],
+            "priority": "Medium",
+            "effort": "2",
+            "implementation": "Create GitHub Actions workflow file with appropriate triggers and sample steps"
+          },
+          {
+            "id": "US-4.2",
+            "title": "Set up release automation",
+            "description": "As a developer, I want to automate the release process so that releases are consistent and well-documented",
+            "acceptanceCriteria": [
+              "Creates GitHub Actions workflow for releases in .github/workflows/release.yml",
+              "Configures workflow to trigger on version tags (v*.*.* pattern)",
+              "Configures automatic release notes generation",
+              "Includes sample build and release steps that can be customized later",
+              "Configuration is properly committed and pushed",
+              "Release workflow appears in GitHub Actions tab"
+            ],
+            "priority": "Low",
+            "effort": "2",
+            "implementation": "Create GitHub Actions workflow file that triggers on version tags with automatic release notes generation"
+          },
+          {
+            "id": "US-4.3",
+            "title": "Set up enhanced dependency management",
+            "description": "As a developer, I want to automate dependency updates so that the project stays up-to-date and secure with clear visibility in GitHub",
+            "acceptanceCriteria": [
+              "Configures Dependabot for GitHub Actions in .github/dependabot.yml",
+              "Configures Dependabot for npm dependencies with weekly updates",
+              "Sets appropriate reviewers and assignees for Dependabot PRs",
+              "Includes security and dependency labels for better organization",
+              "Sets target branch to develop for dependency updates",
+              "Configures commit message format for dependency updates",
+              "Configuration is properly committed and pushed",
+              "Dependabot appears in GitHub Insights tab"
+            ],
+            "priority": "Medium",
+            "effort": "1",
+            "implementation": "Create comprehensive Dependabot configuration with reviewers, labels, and commit message formatting"
+          }
+        ]
+      },
+      {
+        "id": "EPIC-5",
+        "title": "Configuration Files",
+        "description": "Setup of standard configuration files",
+        "userStories": [
+          {
+            "id": "US-5.1",
+            "title": "Add comprehensive .gitignore file",
+            "description": "As a developer, I want to have a proper .gitignore file so that unnecessary files are not committed",
+            "acceptanceCriteria": [
+              "Creates .gitignore with common exclusions for various project types",
+              "Includes exclusions for major IDEs and editors (VS Code, JetBrains, Sublime, etc.)",
+              "Includes exclusions for common build outputs and dependencies",
+              "Includes exclusions for OS-specific files (.DS_Store, Thumbs.db, etc.)",
+              "Includes exclusions for environment files and security-sensitive files",
+              "Includes exclusions for testing and coverage reports",
+              "File is properly committed and pushed"
+            ],
+            "priority": "High",
+            "effort": "1",
+            "implementation": "Create comprehensive .gitignore file covering multiple development environments and sensitive file patterns"
+          },
+          {
+            "id": "US-5.2",
+            "title": "Add .editorconfig file",
+            "description": "As a developer, I want to have an .editorconfig file so that coding styles are consistent across the team",
+            "acceptanceCriteria": [
+              "Creates .editorconfig with root = true designation",
+              "Configures common settings for all files (charset, line endings, etc.)",
+              "Configures specific rules for different file types (Python, Markdown, etc.)",
+              "Sets consistent indentation and whitespace rules",
+              "Includes appropriate settings for Makefiles and batch files",
+              "File is properly committed and pushed"
+            ],
+            "priority": "Medium",
+            "effort": "1",
+            "implementation": "Create .editorconfig file with appropriate settings for different file types and common coding style rules"
+          }
+        ]
+      }
+    ],
+    "technicalRequirements": [
+      "Script must be compatible with macOS, Linux, and Windows (Git Bash)",
+      "Script must check for prerequisites (git, GitHub CLI) before proceeding with appropriate error messages",
+      "Script must handle errors gracefully and provide helpful, specific error messages for each step",
+      "Script must work with both free and paid GitHub accounts with appropriate behavior for account limitations",
+      "Script must verify each step's success before proceeding to the next step",
+      "Script must create a consistent branch structure regardless of git-flow availability",
+      "Script must verify branch existence both locally and remotely before completing",
+      "Script must integrate properly with GitHub's Security tab and other UI elements",
+      "Script must use proper exit codes to indicate success or failure",
+      "Script must provide verbose output during execution with color-coded status messages",
+      "Script must not proceed if repository creation or clone fails",
+      "All created files must follow industry standard formatting and best practices"
+    ],
+    "implementation": {
+      "architecture": "Bash script with modular functions for each component",
+      "errorHandling": "Each function should handle its own errors and return appropriate status codes",
+      "verification": "A verification step should follow each critical operation to ensure success",
+      "githubIntegration": "Use GitHub CLI and API commands for maximum compatibility and UI integration",
+      "userFeedback": "Provide clear, color-coded status messages throughout execution",
+      "bestPractices": "Use modern bash scripting practices with proper variable handling and quoting"
+    }
+  }
