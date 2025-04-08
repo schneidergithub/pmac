@@ -75,6 +75,6 @@ PMAC will become the foundation of:
 
 ## Get Involved
 
-- GitHub:  TBD
+- GitHub: Jira Tools are going here: https://github.com/schneidergithub/pmac-tools/blob/master/jira-import-readme.md
 - Email: TBD
 - License: MIT + CC BY 4.0
