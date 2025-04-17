@@ -36,7 +36,7 @@ PMAC supports AI bots as first-class team members who participate in planning, r
 
 ### 5. **Lifecycle Automation**
 PMAC projects can automatically:
-- Bootstrap repositories
+- Bootstrap full companies - create & integrate git repositories, project management (jira), communication (email, slack, teams, etc), HR, finance
 - Create Jira issues and Confluence documentation
 - Track drift from desired state
 - Generate next sprint tasks based on project history and AI suggestions
