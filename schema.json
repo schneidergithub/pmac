@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/lean-project-instructions.schema.json",
+  "title": "Lean Project Instructions Schema",
+  "description": "A minimal reusable schema for defining projects, epics, user stories, and cross-cutting requirements.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project",
+    "description",
+    "epics"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "default": "1.0.0"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable project name."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "High-level summary of the project."
+    },
+    "projectType": {
+      "type": "string",
+      "enum": [
+        "automation",
+        "web_application",
+        "api_service",
+        "cli_tool",
+        "desktop_application",
+        "infrastructure",
+        "documentation",
+        "migration",
+        "data_pipeline",
+        "ai_workflow",
+        "security_hardening",
+        "other"
+      ]
+    },
+    "epics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/epic"
+      }
+    },
+    "technicalRequirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Cross-cutting technical or nonfunctional requirements."
+    },
+    "implementation": {
+      "$ref": "#/$defs/implementation"
+    }
+  },
+  "$defs": {
+    "epic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "description",
+        "userStories"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "userStories": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/userStory"
+          }
+        }
+      }
+    },
+    "userStory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "description",
+        "acceptanceCriteria"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "acceptanceCriteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Backlog"
+          ]
+        },
+        "effort": {
+          "type": "string",
+          "description": "Relative effort, story points, or small sizing value."
+        },
+        "implementation": {
+          "type": "string",
+          "description": "Suggested implementation approach."
+        }
+      }
+    },
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "architecture": {
+          "type": "string"
+        },
+        "errorHandling": {
+          "type": "string"
+        },
+        "verification": {
+          "type": "string"
+        },
+        "bestPractices": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
